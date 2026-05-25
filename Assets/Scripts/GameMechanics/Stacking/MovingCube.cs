@@ -137,7 +137,7 @@ public class MovingCube : MonoBehaviour {
 
     private void SpawnDropCube(float fallingBlockPosition, float fallingBlockSize) {
 
-        var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        var cube = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
 
         if (MoveDirection == MoveDirection.Z) {
             cube.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, fallingBlockSize);
