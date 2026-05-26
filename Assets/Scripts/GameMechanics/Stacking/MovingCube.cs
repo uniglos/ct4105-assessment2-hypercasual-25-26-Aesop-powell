@@ -90,7 +90,7 @@ public class MovingCube : MonoBehaviour {
         if (lastCube != null)
         {
             
-            newXSize = lastCube.transform.localScale.x - Mathf.Abs(hang);
+            newXSize = lastCube.transform.localScale.y - Mathf.Abs(hang);
             fallingBlockSize = transform.localScale.x - newXSize;
 
             newXPosition = lastCube.transform.position.x + (hang / 2);
@@ -162,7 +162,7 @@ public class MovingCube : MonoBehaviour {
                 if (transform.position.z > startCoord) { directionMult = 1; }
 
             } else {
-                transform.position += transform.right * Time.deltaTime * gameManager.moveSpeed * directionMult;
+                transform.position += (transform.up * -1) * Time.deltaTime * gameManager.moveSpeed * directionMult;
                 if (transform.position.x < endCoord) directionMult = -1;
                 if (transform.position.x > startCoord) directionMult = 1;
             }
